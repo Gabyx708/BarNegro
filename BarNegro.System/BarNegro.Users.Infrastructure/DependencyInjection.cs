@@ -8,10 +8,10 @@ namespace BarNegro.Users.Infrastructure
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
+        public static IServiceCollection AddUsersPersistenceServices(this IServiceCollection services,string connectionString)
         {
             services.AddDbContext<UserContext>(options =>
-            options.UseInMemoryDatabase("UserInMemoryDb"));
+            options.UseSqlite(connectionString));
 
             services.AddScoped<IUserRepository, UserRepository>();
 

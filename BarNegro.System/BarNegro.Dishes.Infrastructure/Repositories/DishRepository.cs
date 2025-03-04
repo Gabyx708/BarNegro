@@ -44,5 +44,22 @@ namespace BarNegro.Dishes.Infrastructure.Repositories
                             throw new NullReferenceException();
         }
 
+        public Dish Update(Dish dish)
+        {
+
+            var existingDish = GetById(dish.DishId);
+
+            if (existingDish == null)
+            {
+                throw new NullReferenceException();
+            }
+
+            existingDish.Description = dish.Description;
+            existingDish.Price = dish.Price;
+
+            _context.Dishes.Update(existingDish);
+            _context.SaveChanges();
+            return existingDish;
+        }
     }
 }

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BarNegro.Dishes.Application.Dtos
+﻿namespace BarNegro.Dishes.Application.Dtos
 {
-    public record  CreateDishDto
+    public record CreateDishDto
     {
-        public CreateDishDto(string description, decimal price, string categoryId)
+        public CreateDishDto(string description, decimal price, int categoryId)
         {
             Description = description;
             Price = price;
@@ -17,6 +11,6 @@ namespace BarNegro.Dishes.Application.Dtos
 
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public string CategoryId { get; set; }
+        public int CategoryId { get; set; }
     }
 }

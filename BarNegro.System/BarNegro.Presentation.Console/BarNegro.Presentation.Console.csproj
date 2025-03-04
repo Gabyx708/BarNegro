@@ -8,10 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BarNegro.Dishes.Application\BarNegro.Dishes.Application.csproj" />
+    <ProjectReference Include="..\BarNegro.Dishes.Infrastructure\BarNegro.Dishes.Infrastructure.csproj" />
     <ProjectReference Include="..\BarNegro.Users.Application\BarNegro.Users.Application.csproj" />
     <ProjectReference Include="..\BarNegro.Users.Infrastructure\BarNegro.Users.Infrastructure.csproj" />
   </ItemGroup>
