@@ -2,8 +2,8 @@
 
 namespace BarNegro.Dishes.Application.Interfaces
 {
-    public interface IChangeDishPrice
+    public interface ICreateCategory
     {
-        DishDto ChangePrice(ChangeDishPriceDto newPrice);
+        CategoryDto CreateCategory(string description);
     }
 }

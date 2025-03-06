@@ -2,8 +2,8 @@
 
 namespace BarNegro.Dishes.Application.Interfaces
 {
-    public interface IChangeDishPrice
+    public interface ICategoryQuery
     {
-        DishDto ChangePrice(ChangeDishPriceDto newPrice);
+        List<CategoryDto> GetAll();
     }
 }

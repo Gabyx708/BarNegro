@@ -11,6 +11,9 @@ namespace BarNegro.Dishes.Application
             services.AddScoped<ICreateDish, CreateDish>();
             services.AddScoped<IChangeDishPrice, ChangePriceDish>();
             services.AddScoped<IQueryDish, QueryDish>();
+
+            services.AddScoped<ICreateCategory, CreateCategory>();
+            services.AddScoped<ICategoryQuery, GetCategories>();
             return services;
         }
     }

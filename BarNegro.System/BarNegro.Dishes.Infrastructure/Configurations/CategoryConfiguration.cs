@@ -9,6 +9,9 @@ namespace BarNegro.Dishes.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<DishCategory> builder)
         {
             builder.HasKey(category => category.CategoryId);
+            builder.Property(category => category.CategoryId)
+           .ValueGeneratedOnAdd();
+
             builder.Property(category => category.Description)
                             .IsRequired()
                             .HasMaxLength(100);

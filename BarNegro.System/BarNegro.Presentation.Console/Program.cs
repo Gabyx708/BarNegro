@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using BarNegro.Dishes.Application;
+using BarNegro.Dishes.Application.Interfaces;
 using BarNegro.Dishes.Infrastructure;
 using BarNegro.Users.Application;
 using BarNegro.Users.Application.Interfaces;
@@ -23,24 +24,18 @@ using IHost host = builder.Build();
 
 
 // Obtener el servicio ICreateUser desde el contenedor
-var createUserService = host.Services.GetRequiredService<ICreateUser>();
+var creteCategory = host.Services.GetRequiredService<ICreateCategory>();
 
 // Usar el servicio
-string id, nombre, apellido;
+string descripcion;
 
-Console.WriteLine("Ingrese el DNI:");
-id = Console.ReadLine();
+Console.WriteLine("Ingrese la descripcion de la categoria:");
 
-Console.WriteLine("\nIngrese el Nombre:");
-nombre = Console.ReadLine();
+descripcion = Console.ReadLine();
 
-Console.WriteLine("\nIngrese el Apellido:");
-apellido = Console.ReadLine();
+var categoriaCreada = creteCategory.CreateCategory(descripcion);
 
-// Llamar a la operación para crear el usuario
-var user =  createUserService.CreateWaiter(id, nombre, apellido);
-
-Console.WriteLine($"CREADO: {user.Name} {user.LastName}");
+Console.WriteLine($"se creo la categoria: ID {categoriaCreada.CategoryId} {categoriaCreada.Description}");
 
 await host.RunAsync();
 

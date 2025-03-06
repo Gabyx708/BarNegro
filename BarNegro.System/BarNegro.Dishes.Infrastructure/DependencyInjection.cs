@@ -14,7 +14,7 @@ namespace BarNegro.Dishes.Infrastructure
             services.AddScoped<IDishRepository, DishRepository>();
 
             services.AddDbContext<DishContext>(options =>
-           options.UseSqlite(connectionString));
+            options.UseSqlite(connectionString));
 
             return services;
         }
